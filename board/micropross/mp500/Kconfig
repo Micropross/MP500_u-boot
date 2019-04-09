@@ -1,0 +1,15 @@
+if TARGET_MP500
+
+config IMX_CONFIG
+	default "board/micropross/mp500/imximage-q7.cfg"
+
+config SYS_BOARD
+	default "mp500"
+
+config SYS_VENDOR
+	default "micropross"
+
+config SYS_CONFIG_NAME
+	default "mp500"
+
+endif

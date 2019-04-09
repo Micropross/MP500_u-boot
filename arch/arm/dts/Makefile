@@ -497,7 +497,9 @@ dtb-$(CONFIG_MX53) += imx53-cx9020.dtb \
 
 dtb-$(CONFIG_MX6Q) += \
 	imx6q-display5.dtb \
-	imx6q-logicpd.dtb
+	imx6q-logicpd.dtb \
+	imx6q-mp500.dtb
+
 
 dtb-$(CONFIG_MX6QDL) += \
 	imx6dl-icore.dtb \
