@@ -188,6 +188,7 @@ static inline int fdt_setprop_uxx(void *fdt, int nodeoffset, const char *name,
 int fdt_root(void *fdt)
 {
 	char *serial;
+	u32 revision;
 	int err;
 
 	err = fdt_check_header(fdt);
@@ -206,6 +207,16 @@ int fdt_root(void *fdt)
 			       fdt_strerror(err));
 			return err;
 		}
+	}
+
+	revision = env_get_hex("revision#", 0);
+
+	err = fdt_setprop_u32(fdt, 0, "revision-number", revision);
+
+	if (err < 0) {
+		printf("WARNING: could not set revision-number %s.\n",
+		       fdt_strerror(err));
+		return err;
 	}
 
 	return 0;
